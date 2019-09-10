@@ -1,0 +1,7 @@
+/target/
+
+/.settings/
+/.idea/
+lfm.iml
+.project
+.classpath
