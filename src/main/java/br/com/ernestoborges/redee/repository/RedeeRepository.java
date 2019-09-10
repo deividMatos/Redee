@@ -35,13 +35,7 @@ public class RedeeRepository {
 		sql.append("INSERT INTO dba.redtes (tesmodelo, testextos, tespastas, tescaddat)");
 		sql.append("VALUES ('" + m.getModelo() + "', '" + texto + "', '" + m.getPasta() + "', '"+df.format(new Date())+"')");
 		String base = "";
-		if (m.getPasta().endsWith("301")) {
-			base = "LFM";
-		} else if (m.getPasta().endsWith("201")) {
-			base = "LFM_BG";
-		} else if (m.getPasta().endsWith("101")) {
-			base = "LFM_DPVAT";
-		}
+
 		try {
 			con = ConnectionFactory.getConnection(base);
 			stmt = con.createStatement();
@@ -121,13 +115,7 @@ public class RedeeRepository {
 	 */
 	public void alteraTag(int sequencial, Valores r, PastaTag tag) {
 		String base = "";
-		if (tag.getPasta().endsWith("301")) {
-			base = "LFM";
-		} else if (tag.getPasta().endsWith("201")) {
-			base = "LFM_BG";
-		} else if (tag.getPasta().endsWith("101")) {
-			base = "LFM_DPVAT";
-		}
+
 		try (Connection con = ConnectionFactory.getConnection(base)) {
 			PreparedStatement pstmt = con.prepareStatement("UPDATE prored SET redvalors = ? WHERE redsequen = ? ");
 			pstmt.setString(1, r.getValor());
@@ -152,13 +140,7 @@ public class RedeeRepository {
 	 */
 	public int verificaJaExiste(PastaTag r, Valores v) {
 		String base = "";
-		if (r.getPasta().endsWith("301")) {
-			base = "LFM";
-		} else if (r.getPasta().endsWith("201")) {
-			base = "LFM_BG";
-		} else if (r.getPasta().endsWith("101")) {
-			base = "LFM_DPVAT";
-		}
+
 		
 		try (Connection con = ConnectionFactory.getConnection(base)) {
 			stmt = con.createStatement();

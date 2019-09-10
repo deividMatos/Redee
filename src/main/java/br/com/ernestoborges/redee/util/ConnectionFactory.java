@@ -18,15 +18,14 @@ public final class ConnectionFactory {
 	 * MEtodo que fara a conexao com o banco de dados.
 	 * 
 	 * @param base
-	 *            parametro que define a base onde sera conectado EX.: LFM,
-	 *            LFM_BG...
+	 *            parametro que define a base onde sera conectado EX.: REMOVIDO
 	 * @throws SQLException Erro na busca da conexao
 	 */
 	public static void setConnection(String base) throws SQLException {
 		JtdsDataSource ds = new JtdsDataSource();
 
-		ds.setUser("dba");
-		ds.setPassword("sql");
+		ds.setUser("xxx");
+		ds.setPassword("xxx");
 		ds.setServerName(loadDBA());
 		ds.setDatabaseName(base);
 
@@ -39,8 +38,8 @@ public final class ConnectionFactory {
 
 	public static Connection getConnection(String base) throws SQLException {
 		JtdsDataSource ds = new JtdsDataSource();
-		ds.setUser("dba");
-		ds.setPassword("sql");
+		ds.setUser("xxx");
+		ds.setPassword("xxxx");
 		ds.setServerName(loadDBA());
 		ds.setDatabaseName(base);
 		return ds.getConnection();
@@ -52,7 +51,7 @@ public final class ConnectionFactory {
 	 */
 	public static String loadDBA() {
 		try {
-			File f = new File("\\\\10.67.0.24\\dba\\banco.xml");
+			File f = new File("\\\\xxxxxxxxxxxx\\dba\\banco.xml");
 
 			JAXBContext context = JAXBContext.newInstance(Server.class);
 			Unmarshaller um = context.createUnmarshaller();

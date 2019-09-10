@@ -17,7 +17,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import br.com.ernestoborges.redee.service.RedeeService;
 
 /**
- * Classe de controle de mapeamento para solicitações post com a linguagem json
+ * INFORMACOES DE SEGURANÇA COMO SENHA E PATH'S REAIS, FORAM REMOVIDOS POR QUESTAO DE SEGURANÇA, 
+ * PROJETO ESTA APENAS PARA APRESENTAÇÃO DO MODO DE PROGRAMAÇÃO E PARA CONHECIMENTO DE TERCEIROS SOBRE MIM.
  */
 @RestController
 @RequestMapping(produces = "application/json")
@@ -42,7 +43,7 @@ public class PostController {
 	 * @return retorna o resultado da inseção
 	 * @throws Exception tratamento de possivel erro na conversao para JSONObject
 	 */
-	@PostMapping("/post/tese")
+	@PostMapping("/path/teste1")
 	public String getOutput(InputStream is) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 		String retorno = br.readLine();
@@ -60,7 +61,7 @@ public class PostController {
 	 * @since 2019 09 02
 	 * @throws Exception tratamento de possivel erro na conversao para JSONObject
 	 */
-	@PostMapping("/post/tag")
+	@PostMapping("/path/teste2")
 	public String setTag(InputStream is) throws Exception {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
